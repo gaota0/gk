@@ -15,6 +15,7 @@
     <modules>
         <module>jvm</module>
         <module>web</module>
+        <module>nio</module>
     </modules>
 
     <properties>

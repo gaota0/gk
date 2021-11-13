@@ -1,4 +1,4 @@
-package com.gk.jvm.homework;
+package com.gk.jvm.homework.week1;
 
 import java.io.InputStream;
 import java.lang.reflect.Method;

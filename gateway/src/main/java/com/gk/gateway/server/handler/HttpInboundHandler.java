@@ -11,15 +11,11 @@ import io.netty.handler.codec.http.*;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.MediaType;
 import okhttp3.Response;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * @author gaot
@@ -54,7 +50,7 @@ public class HttpInboundHandler extends SimpleChannelInboundHandler<FullHttpRequ
                 } finally {
                     //                    writeAndFlush(ctx, HttpResponseStatus.OK, content);
 
-                    // 效果不太好，修改问重定向玩玩
+                    // 效果不太好，修改为重定向玩玩
                     final DefaultFullHttpResponse response =
                         new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.FOUND);
                     response.headers().add(HttpHeaderNames.LOCATION, url)

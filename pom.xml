@@ -16,6 +16,7 @@
         <module>jvm</module>
         <module>web</module>
         <module>nio</module>
+        <module>gateway</module>
     </modules>
 
     <properties>

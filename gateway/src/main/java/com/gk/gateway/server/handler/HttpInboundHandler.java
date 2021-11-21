@@ -30,7 +30,6 @@ public class HttpInboundHandler extends SimpleChannelInboundHandler<FullHttpRequ
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest request) throws Exception {
         filterList.forEach(filter -> filter.filter(ctx, request));
-        log.info("channelRead0 request,{}", request);
 
         final String url = router.route(request) + request.uri().substring(1);
         executor.get(url, new Callback() {
@@ -48,14 +47,14 @@ public class HttpInboundHandler extends SimpleChannelInboundHandler<FullHttpRequ
                 } catch (Exception e) {
                     log.error("执行失败", e);
                 } finally {
-                    //                    writeAndFlush(ctx, HttpResponseStatus.OK, content);
+                    writeAndFlush(ctx, HttpResponseStatus.OK, content);
 
                     // 效果不太好，修改为重定向玩玩
-                    final DefaultFullHttpResponse response =
-                        new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.FOUND);
-                    response.headers().add(HttpHeaderNames.LOCATION, url)
-                        .add(HttpHeaderNames.CONTENT_LENGTH, response.content().readableBytes());
-                    ctx.writeAndFlush(response);
+                    //                    final DefaultFullHttpResponse response =
+                    //                        new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.FOUND);
+                    //                    response.headers().add(HttpHeaderNames.LOCATION, url)
+                    //                        .add(HttpHeaderNames.CONTENT_LENGTH, response.content().readableBytes());
+                    //                    ctx.writeAndFlush(response);
                 }
             }
         });

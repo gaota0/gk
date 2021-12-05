@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "student.vip",
+      "type": "com.gk.springboot.starter.StudentProperties",
+      "sourceType": "com.gk.springboot.starter.StudentProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "student.vip.age",
+      "type": "java.lang.Integer",
+      "sourceType": "com.gk.springboot.starter.StudentProperties"
+    },
+    {
+      "name": "student.vip.name",
+      "type": "java.lang.String",
+      "sourceType": "com.gk.springboot.starter.StudentProperties"
+    }
+  ],
+  "hints": []
+}

@@ -18,6 +18,10 @@
         <module>nio</module>
         <module>gateway</module>
         <module>juc</module>
+        <module>spring</module>
+        <module>springboot-starter</module>
+        <module>springboot</module>
+        <module>jdbc</module>
     </modules>
 
     <properties>
@@ -25,6 +29,10 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -39,6 +47,10 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
             <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
     </dependencies>
 

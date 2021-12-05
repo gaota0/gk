@@ -1,4 +1,4 @@
-package com.gk.spring.aop.jdk;
+package com.gk.spring.aop;
 
 import lombok.AllArgsConstructor;
 
@@ -20,9 +20,9 @@ public class JdkDynamicProxy implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("dynamic proxy handle start");
+        System.out.println("jdk dynamic proxy handle start");
         final Object result = method.invoke(service, args);
-        System.out.println("dynamic proxy handle end");
+        System.out.println("jdk dynamic proxy handle end");
         return result;
     }
 }

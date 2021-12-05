@@ -1,4 +1,6 @@
-package com.gk.spring.aop.jdk;
+package com.gk.spring.aop;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author gaot
@@ -8,5 +10,8 @@ public class ServiceImpl implements IService{
     @Override
     public void serviceHandle() {
         System.out.println("service handle invoke");
+    }
+    public ServiceImpl() {
+
     }
 }

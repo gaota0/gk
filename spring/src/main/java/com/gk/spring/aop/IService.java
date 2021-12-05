@@ -1,4 +1,4 @@
-package com.gk.spring.aop.jdk;
+package com.gk.spring.aop;
 
 /**
  * @author gaot

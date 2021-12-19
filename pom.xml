@@ -23,6 +23,7 @@
         <module>springboot</module>
         <module>jdbc</module>
         <module>mysql</module>
+        <module>shardingjdbc</module>
     </modules>
 
     <properties>

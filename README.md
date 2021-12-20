@@ -10,7 +10,7 @@
 - https://github.com/gaota0/gk/blob/main/mysql/src/main/java/com/gk/mysql/config/DsConfig.java
 - https://github.com/gaota0/gk/blob/main/mysql/src/main/java/com/gk/mysql/aspect/DsRouteAspect.java
 
-###  10.（必做）读写分离 - 数据库框架版本 2.0
+####  10.（必做）读写分离 - 数据库框架版本 2.0
 - 集成sharding-jdbc 完成读写分离和分库分表
 - 主要是配置，代码无其他变化
 - https://github.com/gaota0/gk/blob/main/shardingjdbc/src/main/resources/application.yml

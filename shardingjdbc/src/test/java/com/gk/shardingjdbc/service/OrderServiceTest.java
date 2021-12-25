@@ -22,7 +22,7 @@ class OrderServiceTest {
     private OrderService orderService;
     @Test
     public void testSharding() {
-        IntStream.range(0, 10).mapToObj(this::buildEntity).forEach(orderEntity -> orderService.getBaseMapper().insert(orderEntity));
+        IntStream.range(0, 10000).mapToObj(this::buildEntity).forEach(orderEntity -> orderService.getBaseMapper().insert(orderEntity));
     }
     private OrderEntity buildEntity(Integer id) {
         final OrderEntity orderEntity = new OrderEntity();

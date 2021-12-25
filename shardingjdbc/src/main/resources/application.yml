@@ -20,33 +20,21 @@ spring:
         username: root
         password: root
         jdbcUrl: jdbc:mysql://127.0.0.1:3306/ds1?charsetEncoding=utf8mb4
-#      ds0_slave:
-#        type: com.zaxxer.hikari.HikariDataSource
-#        driver-class-name: com.mysql.cj.jdbc.Driver
-#        username: root
-#        password: root
-#        jdbcUrl: jdbc:mysql://127.0.0.1:3306/ds0_slave?charsetEncoding=utf8mb4
-#      ds1_slave:
-#        type: com.zaxxer.hikari.HikariDataSource
-#        driver-class-name: com.mysql.cj.jdbc.Driver
-#        username: root
-#        password: root
-#        jdbcUrl: jdbc:mysql://127.0.0.1:3306/ds1_slave?charsetEncoding=utf8mb4
     sharding:
       default-data-source-name: ds0
       binding-tables:
         - t_order
       tables:
         t_order:
-          actual-data-nodes: ds$->{0..1}.t_order_$->{0..1}
+          actual-data-nodes: ds$->{0..1}.t_order_$->{0..15}
           table-strategy:
             inline:
               sharding-column: id
-              algorithm-expression: t_order_$->{id % 2}
+              algorithm-expression: t_order_$->{id % 16}
           database-strategy:
             inline:
               sharding-column: id
-              algorithm-expression: ds$->{id % 4 >> 1}
+              algorithm-expression: ds$->{id % 32 >> 4}
 #      master-slave-rules:
 #        ds0:
 #          name: ds0

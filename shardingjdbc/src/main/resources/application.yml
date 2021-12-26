@@ -35,12 +35,3 @@ spring:
             inline:
               sharding-column: id
               algorithm-expression: ds$->{id % 32 >> 4}
-#      master-slave-rules:
-#        ds0:
-#          name: ds0
-#          master-data-source-name: ds0
-#          slave-data-source-names: ds0-slave
-#        ds1:
-#          name: ds1
-#          master-data-source-name: ds1
-#          slave-data-source-names: ds1-slave

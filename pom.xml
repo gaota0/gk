@@ -24,6 +24,7 @@
         <module>jdbc</module>
         <module>mysql</module>
         <module>shardingjdbc</module>
+        <module>rpc</module>
     </modules>
 
     <properties>
